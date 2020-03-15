@@ -1,0 +1,39 @@
+Windows Registry Editor Version 5.00
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt-cmd]
+ @="Open CMD Using Windows Terminal Here"
+ "Icon"="C:\\Users\\Administrator\\AppData\\Local\\wxc\\ico\\cmd.ico"
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt-cmd\command]
+ @="C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -p cmd -d ."
+ 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt-debian]
+ @="Open WSL-Debian Using Windows Terminal Here"
+ "Icon"="C:\\Users\\Administrator\\AppData\\Local\\wxc\\ico\\debian.ico"
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt-debian\command]
+ @="C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -p debian -d ."
+ 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt-gitbash]
+ @="Open Git Bash Using Windows Terminal Here"
+ "Icon"="C:\\Users\\Administrator\\AppData\\Local\\wxc\\ico\\git.ico"
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt-gitbash\command]
+ @="C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -p git -d ."
+ 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt-ps]
+ @="Open PowerShell Using Windows Terminal Here"
+ "Extended"=""
+ "Icon"="C:\\Users\\Administrator\\AppData\\Local\\wxc\\ico\\ps.ico"
+
+
+[HKEY_CLASSES_ROOT\Directory\Background\shell\wt-ps\command]
+ @="C:\\Users\\Administrator\\AppData\\Local\\Microsoft\\WindowsApps\\wt.exe -p ps -d ."
+ 
+[HKEY_CLASSES_ROOT\Directory\Background\shell\git_gui]
+ "Extended"=""
+ 
+ [HKEY_CLASSES_ROOT\Directory\Background\shell\git_shell]
+ "Extended"=""
