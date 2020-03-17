@@ -17,6 +17,7 @@
 				"hidden": false,
 				"colorScheme": "Tomorrow Night Blue",
 				"fontFace": "Fira Code",
+				"closeOnExit": true,
 				"fontSize": 11
 			},
 			{
@@ -27,6 +28,7 @@
 				"colorScheme": "Brogrammer",
 				"fontFace": "Fira Code",
 				"fontSize": 11,
+				"closeOnExit": true,
 				"startingDirectory" : "//wsl$/Debian/root"
 			},
 			{
@@ -37,6 +39,7 @@
 				"startingDirectory": "%USERPROFILE%",
 				"colorScheme": "Tomorrow Night Blue",
 				"fontFace": "Fira Code",
+				"closeOnExit": true,
 				"fontSize": 11
 			},			
 			{
