@@ -3,9 +3,9 @@
 import os,shutil
 
 thisFolder = os.path.dirname(os.path.realpath(__file__))
-strExeuteReg = 'regedit.exe /s ' + thisFolder + '\\wt.reg'
 
 # 导入注册表
+strExeuteReg = 'regedit.exe /s ' + thisFolder + '\\wt.reg'
 os.system(strExeuteReg)
 
 # 复制图标
@@ -29,3 +29,17 @@ strWgetFilePath=thisFolder + '\\wget.exe'
 strWgetInstallFilePath=r'C:\Program Files\Git\usr\bin\wget.exe'
 
 shutil.copyfile(strWgetFilePath,strWgetInstallFilePath)
+
+# 添加OpenSSH Server
+strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0"'
+os.system(strExecutePS)
+
+strSshdConfigPath = thisFolder + '\\sshd_config'
+strSshdConfigInstallPath=r'C:\ProgramData\ssh\sshd_config'
+shutil.copyfile(strSshdConfigPath, strSshdConfigInstallPath)
+
+# 开启OpenSSH Server
+os.system('net start sshd')
+
+# 设置Oracle的环境变量
+strSetOracleLangPath = 'setx "NLS_LANG" "SIMPLIFIED CHINESE_CHINA.ZHS16GBK" /m'
