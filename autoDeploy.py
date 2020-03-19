@@ -3,9 +3,9 @@
 import os,shutil
 
 thisFolder = os.path.dirname(os.path.realpath(__file__))
+strExeuteReg = 'regedit.exe /s ' + thisFolder + '\\wt.reg'
 
 # 导入注册表
-strExeuteReg = 'regedit.exe /s ' + thisFolder + '\\wt.reg'
 os.system(strExeuteReg)
 
 # 复制图标
@@ -28,7 +28,7 @@ shutil.copyfile(strWtConfigFilePath,strWtConfigInstallFilePath)
 strWgetFilePath=thisFolder + '\\wget.exe'
 strWgetInstallFilePath=r'C:\Program Files\Git\usr\bin\wget.exe'
 
-shutil.copyfile(strWgetFilePath,strWgetInstallFilePath)
+shutil.copyfile(strWgetFilePath, strWgetInstallFilePath)
 
 # 添加OpenSSH Server
 strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0"'
@@ -43,3 +43,17 @@ os.system('net start sshd')
 
 # 设置Oracle的环境变量
 strSetOracleLangPath = 'setx "NLS_LANG" "SIMPLIFIED CHINESE_CHINA.ZHS16GBK" /m'
+
+# # 安装字体
+# strFontsPath = thisFolder + '\\font'
+# strFontsInstallPath = r'C:\Windows\Fonts'
+# fonts = os.listdir(strFontsPath)
+# for font in fonts:
+# 	shutil.copyfile(strFontsPath + '\\'+font,strFontsInstallPath+'\\'+font)
+
+# 创建Consolas的FontLink
+strRegConsolasFontLink=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink" /v "Consolas" /t REG_MULTI_SZ /d "MSYH.TTC,Microsoft YaHei UI,128,96\0MSYH.TTC,Microsoft YaHei UI" /f'
+strRegFiraCodeFontLink=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\FontLink\SystemLink" /v "Fira Code" /t REG_MULTI_SZ /d "MSYH.TTC,Microsoft YaHei UI,128,96\0MSYH.TTC,Microsoft YaHei UI" /f'
+
+os.system(strRegConsolasFontLink)
+os.system(strRegFiraCodeFontLink)
