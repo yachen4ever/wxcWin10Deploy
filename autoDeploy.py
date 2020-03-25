@@ -30,6 +30,12 @@ strWgetInstallFilePath=r'C:\Program Files\Git\usr\bin\wget.exe'
 
 shutil.copyfile(strWgetFilePath, strWgetInstallFilePath)
 
+# 复制git bash的git-prompt.sh
+strGitPromptFilePath=thisFolder + '\\git-prompt.sh'
+strGitPromptInstallFilePath=r'C:\Program Files\Git\etc\profile.d\git-prompt.sh'
+
+shutil.copyfile(strGitPromptFilePath, strGitPromptInstallFilePath)
+
 # 添加OpenSSH Server
 strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0"'
 os.system(strExecutePS)
