@@ -1,0 +1,29 @@
+Host qq
+HostName qq.950106.xyz
+Port 23333
+User root
+
+Host ct
+HostName 223.240.76.231
+Port 23333
+User root
+
+Host v65
+HostName v65.950106.xyz
+Port 23333
+User root
+
+Host mayo
+HostName mayo.950106.xyz
+Port 23333
+User root
+
+Host v3
+HostName v3.950106.xyz
+Port 23333
+User root
+
+Host any
+HostName any.950106.xyz
+Port 23333
+User root

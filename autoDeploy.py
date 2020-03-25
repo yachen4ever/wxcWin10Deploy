@@ -8,7 +8,7 @@ strExeuteReg = 'regedit.exe /s ' + thisFolder + '\\wt.reg'
 # 导入注册表
 os.system(strExeuteReg)
 
-# 复制图标
+# 复制Windows Terminal图标
 strIconPath = thisFolder + '\\ico'
 strIconInstallPath = r'C:\Users\Administrator\AppData\Local\wxc\ico'
 if not os.path.exists(strIconInstallPath):
@@ -36,6 +36,10 @@ strGitPromptInstallFilePath=r'C:\Program Files\Git\etc\profile.d\git-prompt.sh'
 
 shutil.copyfile(strGitPromptFilePath, strGitPromptInstallFilePath)
 
+# 添加OpenSSH Client
+strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0"'
+os.system(strExecutePS)
+
 # 添加OpenSSH Server
 strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0"'
 os.system(strExecutePS)
@@ -46,6 +50,13 @@ shutil.copyfile(strSshdConfigPath, strSshdConfigInstallPath)
 
 # 开启OpenSSH Server
 os.system('net start sshd')
+
+# 复制ssh config文件
+strSSHConfigFilePath = thisFolder + '\\config'
+strSSHConfigInstallPath = r'C:\Users\Administrator\.ssh\'
+if not os.path.exists(strSSHConfigInstallPath):
+	os.makedirs(strSSHConfigInstallPath)
+shutil.copyfile(strSSHConfigFilePath, strSSHConfigInstallPath+'\\'+config)
 
 # 设置Oracle的环境变量
 strSetOracleLangPath = 'setx "NLS_LANG" "SIMPLIFIED CHINESE_CHINA.ZHS16GBK" /m'
