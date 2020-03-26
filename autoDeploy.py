@@ -50,6 +50,7 @@ shutil.copyfile(strSshdConfigPath, strSshdConfigInstallPath)
 
 # 开启OpenSSH Server
 os.system('net start sshd')
+os.system('sc config sshd start=auto')
 
 # 复制ssh config文件
 strSSHConfigFilePath = thisFolder + '\\config'
