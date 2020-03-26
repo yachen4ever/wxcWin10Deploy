@@ -53,10 +53,10 @@ os.system('net start sshd')
 
 # 复制ssh config文件
 strSSHConfigFilePath = thisFolder + '\\config'
-strSSHConfigInstallPath = r'C:\Users\Administrator\.ssh\'
+strSSHConfigInstallPath = r'C:\Users\Administrator\.ssh'
 if not os.path.exists(strSSHConfigInstallPath):
 	os.makedirs(strSSHConfigInstallPath)
-shutil.copyfile(strSSHConfigFilePath, strSSHConfigInstallPath+'\\'+config)
+shutil.copyfile(strSSHConfigFilePath, strSSHConfigInstallPath+'\\'+'config')
 
 # 设置Oracle的环境变量
 strSetOracleLangPath = 'setx "NLS_LANG" "SIMPLIFIED CHINESE_CHINA.ZHS16GBK" /m'
