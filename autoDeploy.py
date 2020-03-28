@@ -84,9 +84,9 @@ os.system(strRegConsolasFontLink)
 os.system(strRegFiraCodeFontLink)
 
 # 设置Windows自动登录
-strRegAutoLoginUserName=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultUserName" /t "' + strOSUserName + '"'
-strRegAutoLoginPwd=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultPassword" /t "' + strOSPassword + '"'
-strRegAutoAdminLogin=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "AutoAdminLogon" /t "1"'
+strRegAutoLoginUserName=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultUserName" /d "' + strOSUserName + '" /f'
+strRegAutoLoginPwd=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultPassword" /d "' + strOSPassword + '" /f'
+strRegAutoAdminLogin=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "AutoAdminLogon" /dy "1" /f'
 os.system(strRegAutoLoginUserName)
 os.system(strRegAutoLoginPwd)
 os.system(strRegAutoAdminLogin)
