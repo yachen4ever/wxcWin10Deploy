@@ -1,16 +1,23 @@
 #!/usr/bin/env python3
 
-import os,shutil
+import os, shutil, getpass
 
+# 获取当前用户的userprofile
+strOSUserName = getpass.getuser()
+strOSPassword = 'MAPLE4ever'
+strUserProfile = os.path.expanduser('~')
+
+# 获取脚本所在目录
 thisFolder = os.path.dirname(os.path.realpath(__file__))
-strExeuteReg = 'regedit.exe /s ' + thisFolder + '\\wt.reg'
 
-# 导入注册表
+# 导入Windows Terminal右键菜单注册表设置  |  尚未适配用户名
+strExeuteReg = 'regedit.exe /s ' + thisFolder + '\\wt.reg'
 os.system(strExeuteReg)
 
 # 复制Windows Terminal图标
 strIconPath = thisFolder + '\\ico'
-strIconInstallPath = r'C:\Users\Administrator\AppData\Local\wxc\ico'
+strIconInstallPath = strUserProfile + '\\AppData\\Local\\wxc\\ico'
+print(strIconInstallPath)
 if not os.path.exists(strIconInstallPath):
 	os.makedirs(strIconInstallPath)
 
@@ -20,7 +27,7 @@ for icon in icons:
 
 # 复制Windows Terminal的配置文件
 strWtConfigFilePath = thisFolder + '\\wtprofiles.json'
-strWtConfigInstallFilePath = r'C:\Users\Administrator\AppData\Local\Packages\Microsoft.WindowsTerminal_8wekyb3d8bbwe\LocalState\profiles.json'
+strWtConfigInstallFilePath = strUserProfile + '\\AppData\\Local\\Packages\\Microsoft.WindowsTerminal_8wekyb3d8bbwe\\LocalState\\profiles.json'
 
 shutil.copyfile(strWtConfigFilePath,strWtConfigInstallFilePath)
 
@@ -54,7 +61,7 @@ os.system('sc config sshd start=auto')
 
 # 复制ssh config文件
 strSSHConfigFilePath = thisFolder + '\\config'
-strSSHConfigInstallPath = r'C:\Users\Administrator\.ssh'
+strSSHConfigInstallPath = strUserProfile + '\\.ssh'
 if not os.path.exists(strSSHConfigInstallPath):
 	os.makedirs(strSSHConfigInstallPath)
 shutil.copyfile(strSSHConfigFilePath, strSSHConfigInstallPath+'\\'+'config')
@@ -75,3 +82,11 @@ strRegFiraCodeFontLink=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows 
 
 os.system(strRegConsolasFontLink)
 os.system(strRegFiraCodeFontLink)
+
+# 设置Windows自动登录
+strRegAutoLoginUserName=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultUserName" /t "' + strOSUserName + '"'
+strRegAutoLoginPwd=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "DefaultPassword" /t "' + strOSPassword + '"'
+strRegAutoAdminLogin=r'reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows NT\CurrentVersion\Winlogon" /v "AutoAdminLogon" /t "1"'
+os.system(strRegAutoLoginUserName)
+os.system(strRegAutoLoginPwd)
+os.system(strRegAutoAdminLogin)
