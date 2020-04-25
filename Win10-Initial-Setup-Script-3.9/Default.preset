@@ -1,0 +1,152 @@
+##########
+# Win 10 / Server 2016 / Server 2019 Initial Setup Script - Default preset
+# Author: Disassembler <disassembler@dasm.cz>
+# Version: v3.9, 2020-04-02
+# Source: https://github.com/Disassembler0/Win10-Initial-Setup-Script
+##########
+
+### Require administrator privileges ###
+RequireAdmin
+
+### Privacy Tweaks ###
+DisableTelemetry          
+DisableWiFiSense          
+DisableSmartScreen      
+DisableWebSearch        
+DisableAppSuggestions     
+EnableActivityHistory    
+DisableBackgroundApps    
+EnableSensors  
+DisableLocation           
+DisableMapUpdates         
+DisableFeedback           
+DisableTailoredExperiences
+DisableAdvertisingID      
+DisableWebLangList        
+DisableCortana 
+DisableErrorReporting      
+SetP2PUpdateDisable      
+DisableDiagTrack          
+DisableWAPPush            
+EnableClearRecentFiles  
+EnableRecentFiles      
+
+### Security Tweaks ###
+SetUACLow               
+EnableSharingMappedDrives
+DisableAdminShares        
+EnableFirewall         
+HideDefenderTrayIcon    
+DisableDefender         
+DisableDefenderCloud    
+EnableCtrldFolderAccess 
+EnableCIMemoryIntegrity 
+DisableDefenderAppGuard
+HideAccountProtectionWarn 
+DisableDownloadBlocking 
+EnableScriptHost        
+EnableDotNetStrongCrypto  
+DisableMeltdownCompatFlag
+EnableF8BootMenu          
+SetDEPOptOut              
+
+### Network Tweaks ###
+DisableRemoteAssistance 
+DisableSMB1
+DisableSMBServer
+EnableRemoteDesktop
+
+### Service Tweaks ###
+DisableUpdateDriver
+DisableUpdateMSRT
+DisableMaintenanceWakeUp
+DisableSharedExperiences
+DisableAutoplay
+EnableClipboardHistory
+DisableRestorePoints
+DisableSuperfetch
+EnableNTFSLongPaths
+DisableSleepButton
+
+### UI Tweaks ###
+DisableActionCenter           
+EnableLockScreen             
+# DisableLockScreenRS1        
+ShowNetworkOnLockScreen    
+ShowShutdownOnLockScreen    
+DisableLockScreenBlur         
+DisableAeroShake            
+DisableAccessibilityKeys      
+ShowTaskManagerDetails        
+ShowFileOperationsDetails  
+EnableFileDeleteConfirm     
+HideTaskbarSearch             
+HideTaskbarSearchIcon         
+HideTaskView                  
+ShowSmallTaskbarIcons          
+SetTaskbarCombineNever        
+HideTaskbarPeopleIcon         
+HideTrayIcons                 
+ShowSecondsInTaskbar        
+EnableSearchAppInStore       
+DisableNewAppPrompt           
+HideRecentlyAddedApps       
+HideMostUsedApps            
+SetControlPanelLargeIcons     
+DisableShortcutInName         
+ShowShortcutArrow           
+SetVisualFXPerformance        
+EnableTitleBarColor         
+# EnableDarkTheme             
+DisableEnhPointerPrecision    
+DisableF1HelpKey              
+
+### Explorer UI Tweaks ###
+HideExplorerTitleFullPath
+ShowKnownExtensions           
+HideHiddenFiles               
+HideSuperHiddenFiles        
+ShowEmptyDrives             
+ShowFolderMergeConflicts    
+EnableNavPaneExpand           
+# ShowNavPaneAllFolders       
+DisableFldrSeparateProcess 
+DisableRestoreFldrWindows
+ShowEncCompFilesColor       
+DisableSharingWizard        
+# HideSelectCheckboxes        
+HideSyncNotifications         
+HideRecentShortcuts           
+SetExplorerThisPC             
+ShowQuickAccess               
+ShowRecycleBinOnDesktop   
+ShowThisPCOnDesktop           
+ShowUserFolderOnDesktop   
+HideControlPanelFromDesktop
+ShowNetworkOnDesktop  
+HideBuildNumberFromDesktop
+DisableThumbnailCache           # EnableThumbnailCache
+DisableThumbsDBOnNetwork 
+
+### Application Tweaks ###
+DisableOneDrive          
+UninstallOneDrive        
+UninstallMsftBloat       
+UninstallThirdPartyBloat 
+DisableXboxFeatures
+DisableEdgePreload         
+DisableEdgeShortcutCreation
+EnableEdgeShortcutCreation
+DisableIEFirstRun          
+DisableFirstLogonAnimation 
+EnableFirstLogonAnimation
+DisableMediaSharing    
+UninstallHelloFace    
+SetPhotoViewerAssociation
+RemoveFaxPrinter
+UninstallXPSPrinter
+UninstallFaxAndScan
+
+### Auxiliary Functions ###
+WaitForKey
+#Restart
