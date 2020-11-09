@@ -4,7 +4,7 @@ import os, shutil, getpass
 
 # 获取当前用户的userprofile
 strOSUserName = getpass.getuser()
-strOSPassword = 'MAPLE4ever'
+strOSPassword = ''
 strUserProfile = os.path.expanduser('~')
 
 # 获取脚本所在目录
@@ -44,20 +44,20 @@ strGitPromptInstallFilePath=r'C:\Program Files\Git\etc\profile.d\git-prompt.sh'
 shutil.copyfile(strGitPromptFilePath, strGitPromptInstallFilePath)
 
 # 添加OpenSSH Client
-strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0"'
-os.system(strExecutePS)
+#strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0"'
+#os.system(strExecutePS)
 
 # 添加OpenSSH Server
-strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0"'
-os.system(strExecutePS)
+#strExecutePS='powershell "Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0"'
+#os.system(strExecutePS)
 
-strSshdConfigPath = thisFolder + '\\sshd_config'
-strSshdConfigInstallPath=r'C:\ProgramData\ssh\sshd_config'
-shutil.copyfile(strSshdConfigPath, strSshdConfigInstallPath)
+#strSshdConfigPath = thisFolder + '\\sshd_config'
+#strSshdConfigInstallPath=r'C:\ProgramData\ssh\sshd_config'
+#shutil.copyfile(strSshdConfigPath, strSshdConfigInstallPath)
 
 # 开启OpenSSH Server
-os.system('net start sshd')
-os.system('sc config sshd start=auto')
+#os.system('net start sshd')
+#os.system('sc config sshd start=auto')
 
 # 复制ssh config文件
 strSSHConfigFilePath = thisFolder + '\\config'

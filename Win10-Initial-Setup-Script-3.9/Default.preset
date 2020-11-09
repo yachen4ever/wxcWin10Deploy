@@ -141,7 +141,7 @@ DisableIEFirstRun
 DisableFirstLogonAnimation 
 EnableFirstLogonAnimation
 DisableMediaSharing    
-UninstallHelloFace    
+#UninstallHelloFace    
 SetPhotoViewerAssociation
 RemoveFaxPrinter
 UninstallXPSPrinter
