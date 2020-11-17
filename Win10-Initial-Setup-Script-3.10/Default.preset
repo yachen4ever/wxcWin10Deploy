@@ -134,18 +134,20 @@ UninstallOneDrive
 UninstallMsftBloat       
 UninstallThirdPartyBloat 
 DisableXboxFeatures
-DisableEdgePreload         
-DisableEdgeShortcutCreation
+DisableEdgePreload
 EnableEdgeShortcutCreation
 DisableIEFirstRun          
 DisableFirstLogonAnimation 
-EnableFirstLogonAnimation
 DisableMediaSharing    
 #UninstallHelloFace    
 SetPhotoViewerAssociation
 RemoveFaxPrinter
 UninstallXPSPrinter
 UninstallFaxAndScan
+InstallTelnetClient
+InstallSSHClient
+DisableMediaOnlineAccess
+EnableDeveloperMode
 
 ### Auxiliary Functions ###
 WaitForKey
